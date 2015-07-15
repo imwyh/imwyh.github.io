@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta charset="UTF-8">
-        <title>imwyh@github</title>
-    </head>
-    <body>
-		<h1>hellow word!</h1>
-		<h1>this is imwyh.github.io!</h1>
-		<script type="text/javascript">
-			alert("貌似已经做好githubpage了→_→")
-		</script>
-    </body>
-</html>
+　　---
+ 　　layout: default
+ 　　title: 我的Blog
+ 　　---
+　　<h2>{{ page.title }}</h2>
+　　<p>最新文章</p>
+　　<ul>
+　　　　{% for post in site.posts %} 
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　{% endfor %}
+　　</ul>
